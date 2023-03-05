@@ -189,7 +189,7 @@ body {
   transform: rotate(45deg);
   overflow: hidden;
 }
-.toggle_buttons {
+.toggleButton_container {
   width: 35px;
   height: 272px;
   background: url("../images/v8_53.png");
@@ -202,7 +202,7 @@ body {
   left: 285px;
   overflow: hidden;
 }
-.hideTags_button7 {
+.hideTags_container {
   width: 35px;
   height: 20px;
   background: url("../images/v1_46.png");
@@ -215,7 +215,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button7_background {
+.button7 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -224,23 +224,31 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  overflow: hidden
 }
-.button7_toggle {
+.button7::before {
   width: 17px;
   height: 17px;
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 2px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
 }
-.hideSidebar_button6 {
+input:checked + .button7{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button7::before{
+  transform: translateX(-14px);
+}
+
+.hideSidebar_container {
   width: 35px;
   height: 20px;
   background: url("../images/v1_50.png");
@@ -253,7 +261,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button6_background {
+.button6 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -262,23 +270,30 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: 0.2s;
 }
-.button6_toggle {
+.button6::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 1.5px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
 }
-.hideVidComments_button5 {
+input:checked + .button6{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button6::before{
+  transform: translateX(-14px);
+}
+
+.hideVidComments_container {
   width: 35px;
   height: 20px;
   background: url("../images/v1_40.png");
@@ -291,7 +306,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button5_background {
+.button5 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -300,23 +315,30 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: 0.2s;
 }
-.button5_toggle {
+.button5::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 2px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
 }
-.watchNext_button4 {
+input:checked + .button5{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button5::before{
+  transform: translateX(-14px);
+}
+
+.watchNext_container {
   width: 35px;
   height: 20px;
   background: url("../images/v1_65.png");
@@ -329,7 +351,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button4_background {
+.button4 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -338,23 +360,30 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: 0.2s;
 }
-.button4_toggle {
+.button4::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 1.5px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
 }
-.homeScreen_button3 {
+input:checked + .button4{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button4::before{
+  transform: translateX(-14px);
+}
+
+.homeScreen_container {
   width: 35px;
   height: 20px;
   background: url("../images/v1_62.png");
@@ -367,7 +396,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button3_background {
+.button3 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -376,23 +405,30 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: 0.2s;
 }
-.button3_toggle {
+.button3::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 2px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
 }
-.hideRecVids_button2 {
+input:checked + .button3{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button3::before{
+  transform: translateX(-14px);
+}
+
+.hideRecVids_container {
   width: 35px;
   height: 20px;
   background: url("../images/v1_59.png");
@@ -405,7 +441,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button2_background {
+.button2 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -414,23 +450,30 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: 0.2s;
 }
-.button2_toggle {
+.button2::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 1.5px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
 }
-.focusMode_button1 {
+input:checked + .button2{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button2::before{
+  transform: translateX(-14px);
+}
+
+.focusMode_container {
   width: 35px;
   height: 20px;
   background: url("../images/v8_32.png");
@@ -443,7 +486,7 @@ body {
   left: 0px;
   overflow: hidden;
 }
-.button1_background {
+.button1 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
@@ -452,19 +495,25 @@ body {
   top: 0px;
   left: 0px;
   border: 0px solid rgba(150,150,150,1);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  transition: 0.2s;
 }
-.button1_toggle {
+.button1::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: absolute;
+  content: '';
   top: 2px;
   left: 16px;
   border-radius: 50%;
+  transition: 0.2s;
+}
+input:checked + .button1{
+  background: rgb(171, 171, 171);
+}
+input:checked + .button1::before{
+  transform: translateX(-14px);
 }
