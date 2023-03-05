@@ -1,0 +1,34 @@
+{
+    //latest version of manifest
+    "manifest_version": 3,
+    //name of chrome extension (shown in extensions page)
+    "name": "focusUp",
+    //description of extension (shown in extensions page)
+    "description": "Remove distracting elements from the YouTube interface.",
+    //version of chrome extension
+    "version": "1.0",
+    //detailed icon (shown in extensions page)
+    "icons": {
+        "100": "/images/logo.png"
+    },
+    //pinned extension icon
+    "action": {
+        //icon shown in extensions bar
+        "default_icon": {
+            "100": "/images/logo.png"
+        },
+        //default popup when chrome extension clicked
+        "default_popup": "homescreen.html"
+    },
+    "content_scripts": [
+        {
+            //runs homescreen.html and content.py when url is matched with that of YouTube
+            "matches": ["https://www.youtube.com/*"],
+            //html files for extension popup
+            "html": ["homescreen.html", "sidebar.html"],
+            //python file for extension functionality
+            "js": ["content.js"],
+            "css": ["homescreen.css", "sidebar.css"]
+        }
+    ]
+}

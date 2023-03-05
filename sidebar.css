@@ -1,0 +1,164 @@
+@font-face {
+    font-family: Cabin;
+    src: url(fonts/Cabin.ttf);
+}
+
+style* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  
+  .background {
+    width: 139px;
+    height: 492px;
+    background: rgba(253,171,171,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .sidebar_text {
+    width: 89px;
+    height: 151px;
+    background: url("../images/v8_55.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 79px;
+    left: 13px;
+    overflow: hidden;
+  }
+  .key_metrics {
+    width: 77px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 127px;
+    left: 0px;
+    font-family: Cabin;
+    font-weight: Bold;
+    font-size: 15px;
+    opacity: 1;
+    text-align: left;
+  }
+  .tag_options {
+    width: 80px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    font-family: Cabin;
+    font-weight: Bold;
+    font-size: 15px;
+    opacity: 1;
+    text-align: left;
+  }
+  .main_options {
+    width: 89px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 43px;
+    left: 0px;
+    font-family: Cabin;
+    font-weight: Bold;
+    font-size: 15px;
+    opacity: 1;
+    text-align: left;
+  }
+  .dark_mode {
+    width: 80px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: Cabin;
+    font-weight: Bold;
+    font-size: 15px;
+    opacity: 1;
+    text-align: left;
+  }
+  .darkMode_button {
+    width: 35px;
+    height: 20px;
+    background: url("../images/v1_73.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 81px;
+    left: 97px;
+    overflow: hidden;
+  }
+  .button_background {
+    width: 35px;
+    height: 20px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 0px solid rgba(150,150,150,1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+  }
+  .button_toggle {
+    width: 17px;
+    height: 17px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: 50%;
+  }
+  .sidebar_icon {
+    width: 18px;
+    height: 15px;
+    background: url("../images/v8_28.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    overflow: hidden;
+  }
+  .line3 {
+    width: 18px;
+    height: 2px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .line2 {
+    width: 18px;
+    height: 2px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .line1 {
+    width: 18px;
+    height: 2px;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    left: 0px;
+    overflow: hidden;
+  }
