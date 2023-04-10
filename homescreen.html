@@ -1,5 +1,6 @@
 <!DOCTYPE html>
   <head>
+
     <link rel="stylesheet" href="homescreen.css">
     <script src="content.js"></script>
 
@@ -9,65 +10,52 @@
         min-width: 341px;
       }
     </style>
+
   </head>
 
 <body>
-  <div class="container"></div>
-    <div class="inner_background"></div>
-    <div class="top_background"></div>
+
+  <div class="outer_background"></div>
+  <div class="inner_background"></div>
+  <div class="top_background"></div>
+  <div class="focusMode_background"></div>
   
-  <div class="homescreen_text">
+  <div class="text_container">
     <span class="hide_tags">Hide Tags</span>
     <span class="hide_sidebar">Hide Sidebar</span>
     <span class="hide_video_comments">Hide Video Comments</span>
-    <span class="watch_next">Watch Next</span>
-    <span class="home_screen">Home Screen</span>
     <span class="hide_recommended_videos">Hide Recommended Videos</span>
     <span class="title_focusUp">FocusUp</span>
     <span class="focus_mode">Focus Mode</span>
-    
-    <div class="dropdown_arrow">
-      <div class="arrow_left"></div>
-      <div class="arrow_right"></div>
-    </div>
   </div>
-    
-    <div class="toggleButton_container">
 
-      <div class="hideTags_container">
-        <input type="checkbox" id="check7">
-        <label for="check7" class="button7"></label>
-      </div>
-      
-      <div class="hideSidebar_container">
-        <input type="checkbox" id="check6">
-        <label for="check6" class="button6"></label>
-      </div>
+  <div class="darkmode_container">
+    <input type="checkbox" id="circle">
+    <label for="circle" class="darkmode"></label>
+  </div>
+
     
-      <div class="hideVidComments_container">
-        <input type="checkbox" id="check5">
-        <label for="check5" class="button5"></label>
-      </div>
-    
-      <div class="watchNext_container">
-        <input type="checkbox" id="check4">
-        <label for="check4" class="button4"></label>
-      </div>
-    
-      <div class="homeScreen_container">
-        <input type="checkbox" id="check3">
-        <label for="check3" class="button3"></label>
-      </div>
-    
-      <div class="hideRecVids_container">
-        <input type="checkbox" id="check2">
-        <label for="check2" class="button2"></label>
-      </div>
-    
-      <div class="focusMode_container">
-        <input type="checkbox" id="check1">
-        <label for="check1" class="button1"></label>
-      </div>
+  <div class="button_container">
+    <div class="hideTags_container">
+      <input type="checkbox" id="check5">
+      <label for="check5" class="button5"></label>
+    </div>
+    <div class="hideSidebar_container">
+      <input type="checkbox" id="check4">
+      <label for="check4" class="button4"></label>
+    </div>
+    <div class="hideVidComments_container">
+      <input type="checkbox" id="check3">
+      <label for="check3" class="button3"></label>
+    </div>
+    <div class="hideRecVids_container">
+      <input type="checkbox" id="check2">
+      <label for="check2" class="button2"></label>
+    </div>
+    <div class="focusMode_container">
+      <input type="checkbox" id="check1">
+      <label for="check1" class="button1"></label>
     </div>
   </div>
+
 </body>

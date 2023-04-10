@@ -7,326 +7,197 @@ style*{
   }
 
 body {
-  font-size: 14px;
+  font-family: Cabin;
+  font-size: 16px;
+  font-weight: Bold;
+  text-align: left;
   background: none
 }
 
-.container {
+.outer_background {
   width: 357px;
   height: 438px;
   background: rgba(252,185,178,1);
-  opacity: 1;
   position: absolute;
   top: 55px;
   left: 0px;
-  overflow: hidden;
+}
+input:checked + .outer_background{
+  background: rgb(89, 34, 34);
 }
 .inner_background {
   width: 316px;
   height: 411px;
   background: rgba(231,200,204,1);
-  opacity: 1;
   position: absolute;
   top: 68px;
   left: 21px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  overflow: hidden;
+  border-radius: 12px;
+}
+.focusMode_background {
+  width: 150px;
+  height: 51px;
+  background: rgba(237, 173, 181, 1);
+  position: absolute;
+  top: 78px;
+  left: 31px;
+  border-radius: 5px;
 }
 .top_background {
   width: 357px;
   height: 56px;
   background: rgba(225,105,105,1);
-  opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  overflow: hidden;
 }
-.homescreen_text {
+
+.darkmode_container {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 14px;
+  left: 5px;
+}
+.darkmode {
+  width: 30px;
+  height: 30px;
+  background: rgb(0, 0, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.darkmode::before {
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  border-right-color: rgb(0, 0, 0);
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(0, 0, 0);
+  border-left-color: rgb(255, 255, 255);
+  border-width: 12px;
+  transform: rotate(-45deg);
+  border-style: solid;
+  position: absolute;
+  content: '';
+  top: 2.5px;
+  left: 2px;
+  transition: 0.4s;
+}
+.darkmode::after {
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  border-right-color: rgb(255, 255, 255);
+  border-top-color: rgb(0, 0, 0);
+  border-bottom-color: rgb(255, 255, 255);
+  border-left-color: rgb(0, 0, 0);
+  border-width: 5px;
+  transform: rotate(-45deg);
+  border-style: solid;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 9.5px;
+  transition: 0.4s;
+}
+input:checked + .darkmode{
+  background: rgb(255, 255, 255);
+}
+input:checked + .darkmode::before{
+  transform: rotate(135deg);;
+  background: rgb(0, 0, 0);
+}
+input:checked + .darkmode::after{
+  transform: rotate(135deg);
+  background: rgb(255, 255, 255);
+}
+
+
+.text_container {
   width: 288px;
   height: 341px;
-  background: url("../images/v8_54.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 15px;
+  top: -35px;
   left: 39px;
-  overflow: hidden;
 }
-.hide_tags {
-  width: 65px;
+.title_focusUp {
+  width: 200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 317px;
-  left: 1px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
+  top: 50px;
+  left: 195px;
+  font-size: 24px;
 }
-.hide_sidebar {
-  width: 86px;
+.focus_mode {
+  width: 200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 275px;
+  top: 127px;
   left: 1px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
+}
+.hide_recommended_videos {
+  width: 200px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 191px;
+  left: 1px;
 }
 .hide_video_comments {
-  width: 149px;
+  width: 200px;
   color: rgba(0,0,0,1);
   position: absolute;
   top: 233px;
   left: 0px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
 }
-.watch_next {
-  width: 77px;
+.hide_sidebar {
+  width: 200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 191px;
-  left: 32px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
-}
-.home_screen {
-  width: 89px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 149px;
-  left: 32px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
-}
-.hide_recommended_videos {
-  width: 184px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 107px;
+  top: 275px;
   left: 1px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
 }
-.title_focusUp {
-  width: 88px;
+.hide_tags {
+  width: 200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 0px;
-  left: 200px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 24px;
-  opacity: 1;
-  text-align: left;
-}
-.focus_mode {
-  width: 80px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 65px;
+  top: 317px;
   left: 1px;
-  font-family: Cabin;
-  font-weight: Bold;
-  font-size: 15px;
-  opacity: 1;
-  text-align: left;
 }
-.dropdown_arrow {
-  width: 10px;
-  height: 6px;
-  background: url("../images/v8_51.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 116px;
-  left: 197px;
-  overflow: hidden;
-}
-.arrow_left {
-  width: 7px;
-  height: 1px;
-  background: rgba(0,0,0,1);
-  opacity: 1;
-  position: relative;
-  top: 2px;
-  left: 3px;
-  transform: rotate(-45deg);
-  overflow: hidden;
-}
-.arrow_right {
-  width: 7px;
-  height: 1px;
-  background: rgba(0,0,0,1);
-  opacity: 1;
-  position: relative;
-  top: 1px;
-  left: -2px;
-  transform: rotate(45deg);
-  overflow: hidden;
-}
-.toggleButton_container {
+
+.button_container {
   width: 35px;
   height: 272px;
-  background: url("../images/v8_53.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 82px;
+  top: 32px;
   left: 285px;
-  overflow: hidden;
 }
 .hideTags_container {
   width: 35px;
   height: 20px;
-  background: url("../images/v1_46.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
   top: 252px;
   left: 0px;
-  overflow: hidden;
-}
-.button7 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border: 0px solid rgba(150,150,150,1);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-  overflow: hidden
-}
-.button7::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255, 255, 255);
-  opacity: 1;
-  position: absolute;
-  content: '';
-  top: 2px;
-  left: 16px;
-  border-radius: 50%;
-  transition: 0.2s;
-}
-input:checked + .button7{
-  background: rgb(171, 171, 171);
-}
-input:checked + .button7::before{
-  transform: translateX(-14px);
-}
-
-.hideSidebar_container {
-  width: 35px;
-  height: 20px;
-  background: url("../images/v1_50.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 210px;
-  left: 0px;
-  overflow: hidden;
-}
-.button6 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border: 0px solid rgba(150,150,150,1);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.2s;
-}
-.button6::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: absolute;
-  content: '';
-  top: 1.5px;
-  left: 16px;
-  border-radius: 50%;
-  transition: 0.2s;
-}
-input:checked + .button6{
-  background: rgb(171, 171, 171);
-}
-input:checked + .button6::before{
-  transform: translateX(-14px);
-}
-
-.hideVidComments_container {
-  width: 35px;
-  height: 20px;
-  background: url("../images/v1_40.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 168px;
-  left: 0px;
-  overflow: hidden;
 }
 .button5 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
-  opacity: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  border: 0px solid rgba(150,150,150,1);
   border-radius: 10px;
-  overflow: hidden;
+  cursor: pointer;
   transition: 0.2s;
 }
 .button5::before {
   width: 17px;
   height: 17px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
+  background: rgba(255, 255, 255);
   position: absolute;
   content: '';
-  top: 2px;
+  top: 1.5px;
   left: 16px;
   border-radius: 50%;
   transition: 0.2s;
@@ -338,40 +209,31 @@ input:checked + .button5::before{
   transform: translateX(-14px);
 }
 
-.watchNext_container {
+.hideSidebar_container {
   width: 35px;
   height: 20px;
-  background: url("../images/v1_65.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 126px;
+  top: 210px;
   left: 0px;
-  overflow: hidden;
 }
 .button4 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
-  opacity: 1;
   position: absolute;
+  cursor: pointer;
   top: 0px;
   left: 0px;
-  border: 0px solid rgba(150,150,150,1);
   border-radius: 10px;
-  overflow: hidden;
   transition: 0.2s;
 }
 .button4::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
-  opacity: 1;
   position: absolute;
   content: '';
-  top: 1.5px;
+  top: 2px;
   left: 16px;
   border-radius: 50%;
   transition: 0.2s;
@@ -383,40 +245,31 @@ input:checked + .button4::before{
   transform: translateX(-14px);
 }
 
-.homeScreen_container {
+.hideVidComments_container {
   width: 35px;
   height: 20px;
-  background: url("../images/v1_62.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 84px;
+  top: 168px;
   left: 0px;
-  overflow: hidden;
 }
 .button3 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
-  opacity: 1;
   position: absolute;
+  cursor: pointer;
   top: 0px;
   left: 0px;
-  border: 0px solid rgba(150,150,150,1);
   border-radius: 10px;
-  overflow: hidden;
   transition: 0.2s;
 }
 .button3::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
-  opacity: 1;
   position: absolute;
   content: '';
-  top: 2px;
+  top: 1.5px;
   left: 16px;
   border-radius: 50%;
   transition: 0.2s;
@@ -431,37 +284,28 @@ input:checked + .button3::before{
 .hideRecVids_container {
   width: 35px;
   height: 20px;
-  background: url("../images/v1_59.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 42px;
+  top: 126px;
   left: 0px;
-  overflow: hidden;
 }
 .button2 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
-  opacity: 1;
   position: absolute;
+  cursor: pointer;
   top: 0px;
   left: 0px;
-  border: 0px solid rgba(150,150,150,1);
   border-radius: 10px;
-  overflow: hidden;
   transition: 0.2s;
 }
 .button2::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
-  opacity: 1;
   position: absolute;
   content: '';
-  top: 1.5px;
+  top: 2px;
   left: 16px;
   border-radius: 50%;
   transition: 0.2s;
@@ -476,38 +320,29 @@ input:checked + .button2::before{
 .focusMode_container {
   width: 35px;
   height: 20px;
-  background: url("../images/v8_32.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+  top: 60px;
+  left: -150px;
 }
 .button1 {
   width: 35px;
   height: 20px;
   background: rgba(178,58,72,1);
-  opacity: 1;
   position: absolute;
+  cursor: pointer;
   top: 0px;
   left: 0px;
-  border: 0px solid rgba(150,150,150,1);
   border-radius: 10px;
-  overflow: hidden;
   transition: 0.2s;
 }
 .button1::before {
   width: 17px;
   height: 17px;
   background: rgba(255,255,255,1);
-  opacity: 1;
   position: absolute;
   content: '';
-  top: 2px;
-  left: 16px;
+  top: 1.5px;
+  left: 16.5px;
   border-radius: 50%;
   transition: 0.2s;
 }

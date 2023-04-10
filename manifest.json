@@ -2,11 +2,15 @@
     //latest version of manifest
     "manifest_version": 3,
     //name of chrome extension (shown in extensions page)
-    "name": "focusUp",
+    "name": "FocusUp",
     //description of extension (shown in extensions page)
     "description": "Remove distracting elements from the YouTube interface.",
     //version of chrome extension
     "version": "1.0",
+    //permission to use chrome.tab API to read/detect tabs for extension
+    "permissions": ["tabs"],
+    //host permissions
+    "host_permissions": ["https://*.youtube.com/*"],
     //detailed icon (shown in extensions page)
     "icons": {
         "100": "/images/logo.png"
@@ -22,12 +26,13 @@
     },
     "content_scripts": [
         {
-            //runs homescreen.html and content.py when url is matched with that of YouTube
+            //runs homescreen.html and content.js when url is matched with that of YouTube
             "matches": ["https://www.youtube.com/*"],
-            //html files for extension popup
+            //runs html files responsible for popup format
             "html": ["homescreen.html", "sidebar.html"],
-            //python file for extension functionality
+            //runs js file responsible for extension functionality
             "js": ["content.js"],
+            //runs css styling files to properly style popup
             "css": ["homescreen.css", "sidebar.css"]
         }
     ]
