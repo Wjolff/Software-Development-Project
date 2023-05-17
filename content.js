@@ -1,5 +1,3 @@
-//TODO: Check with Ms. Edwards if the same variable/argument name (element/className) can be used within multiple different functions
-
 /** 
  * Remove all child elements from a DOM under a specificed class name (useful for removing many elements at once)
  * @param  {string} className The to-be-removed element's class name
@@ -80,3 +78,18 @@ removeId("footer");
 
 //Repositioning Homescreen
 setIdPosition("center", "800px", "550px"); //centers the youtube searchbar
+
+$(document).ready(function() {
+    //set initial state.
+    $('#textbox1').val($(this).is(':checked'));
+  
+    $('#checkbox1').change(function() {
+      $('#textbox1').val($(this).is(':checked'));
+    });
+  
+    $('#checkbox1').click(function() {
+      if (!$(this).is(':checked')) {
+        return confirm("Are you sure?");
+      }
+    });
+  });

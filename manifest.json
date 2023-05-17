@@ -8,7 +8,10 @@
     //version of chrome extension
     "version": "1.0",
     //permission to use chrome.tab API to read/detect tabs for extension
-    "permissions": ["tabs"],
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
     //host permissions
     "host_permissions": ["https://*.youtube.com/*"],
     //detailed icon (shown in extensions page)
@@ -29,11 +32,11 @@
             //runs homescreen.html and content.js when url is matched with that of YouTube
             "matches": ["https://www.youtube.com/*"],
             //runs html files responsible for popup format
-            "html": ["homescreen.html", "sidebar.html"],
+            "html": ["homescreen.html"],
             //runs js file responsible for extension functionality
-            "js": ["content.js"],
+            "js": ["content.js", "popup.js"],
             //runs css styling files to properly style popup
-            "css": ["homescreen.css", "sidebar.css"]
+            "css": ["homescreen.css"]
         }
     ]
 }
