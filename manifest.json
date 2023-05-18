@@ -34,7 +34,7 @@
             //runs html files responsible for popup format
             "html": ["homescreen.html"],
             //runs js file responsible for extension functionality
-            "js": ["content.js", "popup.js"],
+            "js": ["content.js"],
             //runs css styling files to properly style popup
             "css": ["homescreen.css"]
         }

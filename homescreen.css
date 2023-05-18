@@ -1,354 +1,354 @@
 @font-face {
-    font-family: Cabin;
-    src: url(fonts/Cabin.ttf);
+  font-family: Cabin;
+  src: url(fonts/Cabin.ttf);
 }
 style*{
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
 body {
-  font-family: Cabin;
-  font-size: 16px;
-  font-weight: Bold;
-  text-align: left;
-  background: none
+font-family: Cabin;
+font-size: 16px;
+font-weight: Bold;
+text-align: left;
+background: none
 }
 
 .outer_background {
-  width: 357px;
-  height: 438px;
-  background: rgba(252,185,178,1);
-  position: absolute;
-  top: 55px;
-  left: 0px;
+width: 357px;
+height: 438px;
+background: rgba(252,185,178,1);
+position: absolute;
+top: 55px;
+left: 0px;
 }
 input:checked + .outer_background{
-  background: rgb(89, 34, 34);
+background: rgb(89, 34, 34);
 }
 .inner_background {
-  width: 316px;
-  height: 411px;
-  background: rgba(231,200,204,1);
-  position: absolute;
-  top: 68px;
-  left: 21px;
-  border-radius: 12px;
+width: 316px;
+height: 411px;
+background: rgba(231,200,204,1);
+position: absolute;
+top: 68px;
+left: 21px;
+border-radius: 12px;
 }
 .focusMode_background {
-  width: 150px;
-  height: 51px;
-  background: rgba(237, 173, 181, 1);
-  position: absolute;
-  top: 78px;
-  left: 31px;
-  border-radius: 5px;
+width: 150px;
+height: 51px;
+background: rgba(237, 173, 181, 1);
+position: absolute;
+top: 78px;
+left: 31px;
+border-radius: 5px;
 }
 .top_background {
-  width: 357px;
-  height: 56px;
-  background: rgba(225,105,105,1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
+width: 357px;
+height: 56px;
+background: rgba(225,105,105,1);
+position: absolute;
+top: 0px;
+left: 0px;
 }
 
 .darkmode_container {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: 14px;
-  left: 5px;
+width: 100px;
+height: 100px;
+position: absolute;
+top: 14px;
+left: 5px;
 }
 .darkmode {
-  width: 30px;
-  height: 30px;
-  background: rgb(0, 0, 0);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.4s;
+width: 30px;
+height: 30px;
+background: rgb(0, 0, 0);
+position: absolute;
+top: 0px;
+left: 0px;
+border-radius: 50%;
+cursor: pointer;
+transition: 0.4s;
 }
 .darkmode::before {
-  background: rgb(255, 255, 255);
-  border-radius: 50%;
-  border-right-color: rgb(0, 0, 0);
-  border-top-color: rgb(255, 255, 255);
-  border-bottom-color: rgb(0, 0, 0);
-  border-left-color: rgb(255, 255, 255);
-  border-width: 12px;
-  transform: rotate(-45deg);
-  border-style: solid;
-  position: absolute;
-  content: '';
-  top: 2.5px;
-  left: 2px;
-  transition: 0.4s;
+background: rgb(255, 255, 255);
+border-radius: 50%;
+border-right-color: rgb(0, 0, 0);
+border-top-color: rgb(255, 255, 255);
+border-bottom-color: rgb(0, 0, 0);
+border-left-color: rgb(255, 255, 255);
+border-width: 12px;
+transform: rotate(-45deg);
+border-style: solid;
+position: absolute;
+content: '';
+top: 2.5px;
+left: 2px;
+transition: 0.4s;
 }
 .darkmode::after {
-  background: rgb(255, 255, 255);
-  border-radius: 50%;
-  border-right-color: rgb(255, 255, 255);
-  border-top-color: rgb(0, 0, 0);
-  border-bottom-color: rgb(255, 255, 255);
-  border-left-color: rgb(0, 0, 0);
-  border-width: 5px;
-  transform: rotate(-45deg);
-  border-style: solid;
-  position: absolute;
-  content: '';
-  top: 9px;
-  left: 9.5px;
-  transition: 0.4s;
+background: rgb(255, 255, 255);
+border-radius: 50%;
+border-right-color: rgb(255, 255, 255);
+border-top-color: rgb(0, 0, 0);
+border-bottom-color: rgb(255, 255, 255);
+border-left-color: rgb(0, 0, 0);
+border-width: 5px;
+transform: rotate(-45deg);
+border-style: solid;
+position: absolute;
+content: '';
+top: 9px;
+left: 9.5px;
+transition: 0.4s;
 }
 input:checked + .darkmode{
-  background: rgb(255, 255, 255);
+background: rgb(255, 255, 255);
 }
 input:checked + .darkmode::before{
-  transform: rotate(135deg);;
-  background: rgb(0, 0, 0);
+transform: rotate(135deg);;
+background: rgb(0, 0, 0);
 }
 input:checked + .darkmode::after{
-  transform: rotate(135deg);
-  background: rgb(255, 255, 255);
+transform: rotate(135deg);
+background: rgb(255, 255, 255);
 }
 
 
 .text_container {
-  width: 288px;
-  height: 341px;
-  position: absolute;
-  top: -35px;
-  left: 39px;
+width: 288px;
+height: 341px;
+position: absolute;
+top: -35px;
+left: 39px;
 }
 .title_focusUp {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 50px;
-  left: 195px;
-  font-size: 24px;
+width: 200px;
+color: rgba(0,0,0,1);
+position: absolute;
+top: 50px;
+left: 195px;
+font-size: 24px;
 }
 .focus_mode {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 127px;
-  left: 1px;
+width: 200px;
+color: rgba(0,0,0,1);
+position: absolute;
+top: 127px;
+left: 1px;
 }
 .hide_recommended_videos {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 191px;
-  left: 1px;
+width: 200px;
+color: rgba(0,0,0,1);
+position: absolute;
+top: 191px;
+left: 1px;
 }
 .hide_video_comments {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 233px;
-  left: 0px;
+width: 200px;
+color: rgba(0,0,0,1);
+position: absolute;
+top: 233px;
+left: 0px;
 }
 .hide_sidebar {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 275px;
-  left: 1px;
+width: 200px;
+color: rgba(0,0,0,1);
+position: absolute;
+top: 275px;
+left: 1px;
 }
 .hide_tags {
-  width: 200px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 317px;
-  left: 1px;
+width: 200px;
+color: rgba(0,0,0,1);
+position: absolute;
+top: 317px;
+left: 1px;
 }
 
 .button_container {
-  width: 35px;
-  height: 272px;
-  position: absolute;
-  top: 32px;
-  left: 285px;
+width: 35px;
+height: 272px;
+position: absolute;
+top: 32px;
+left: 285px;
 }
 .hideTags_container {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  top: 252px;
-  left: 0px;
+width: 35px;
+height: 20px;
+position: absolute;
+top: 252px;
+left: 0px;
 }
-.button5 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
+.toggle5 {
+width: 35px;
+height: 20px;
+background: rgba(178,58,72,1);
+position: absolute;
+top: 0px;
+left: 0px;
+border-radius: 10px;
+cursor: pointer;
+transition: 0.2s;
 }
-.button5::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255, 255, 255);
-  position: absolute;
-  content: '';
-  top: 1.5px;
-  left: 16px;
-  border-radius: 50%;
-  transition: 0.2s;
+.toggle5::before {
+width: 17px;
+height: 17px;
+background: rgba(255, 255, 255);
+position: absolute;
+content: '';
+top: 1.5px;
+left: 16px;
+border-radius: 50%;
+transition: 0.2s;
 }
-input:checked + .button5{
-  background: rgb(171, 171, 171);
+.toggle5.active5 {
+background: rgb(171, 171, 171);
 }
-input:checked + .button5::before{
-  transform: translateX(-14px);
+.toggle5.active5::before {
+transform: translateX(-14px);
 }
 
 .hideSidebar_container {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  top: 210px;
-  left: 0px;
+width: 35px;
+height: 20px;
+position: absolute;
+top: 210px;
+left: 0px;
 }
-.button4 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  position: absolute;
-  cursor: pointer;
-  top: 0px;
-  left: 0px;
-  border-radius: 10px;
-  transition: 0.2s;
+.toggle4 {
+width: 35px;
+height: 20px;
+background: rgba(178,58,72,1);
+position: absolute;
+cursor: pointer;
+top: 0px;
+left: 0px;
+border-radius: 10px;
+transition: 0.2s;
 }
-.button4::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255,255,255,1);
-  position: absolute;
-  content: '';
-  top: 2px;
-  left: 16px;
-  border-radius: 50%;
-  transition: 0.2s;
+.toggle4::before {
+width: 17px;
+height: 17px;
+background: rgba(255,255,255,1);
+position: absolute;
+content: '';
+top: 2px;
+left: 16px;
+border-radius: 50%;
+transition: 0.2s;
 }
-input:checked + .button4{
-  background: rgb(171, 171, 171);
+.toggle4.active4 {
+background: rgb(171, 171, 171);
 }
-input:checked + .button4::before{
-  transform: translateX(-14px);
+.toggle4.active4::before {
+transform: translateX(-14px);
 }
 
 .hideVidComments_container {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  top: 168px;
-  left: 0px;
+width: 35px;
+height: 20px;
+position: absolute;
+top: 168px;
+left: 0px;
 }
-.button3 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  position: absolute;
-  cursor: pointer;
-  top: 0px;
-  left: 0px;
-  border-radius: 10px;
-  transition: 0.2s;
+.toggle3 {
+width: 35px;
+height: 20px;
+background: rgba(178,58,72,1);
+position: absolute;
+cursor: pointer;
+top: 0px;
+left: 0px;
+border-radius: 10px;
+transition: 0.2s;
 }
-.button3::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255,255,255,1);
-  position: absolute;
-  content: '';
-  top: 1.5px;
-  left: 16px;
-  border-radius: 50%;
-  transition: 0.2s;
+.toggle3::before {
+width: 17px;
+height: 17px;
+background: rgba(255,255,255,1);
+position: absolute;
+content: '';
+top: 1.5px;
+left: 16px;
+border-radius: 50%;
+transition: 0.2s;
 }
-input:checked + .button3{
-  background: rgb(171, 171, 171);
+.toggle3.active3 {
+background: rgb(171, 171, 171);
 }
-input:checked + .button3::before{
-  transform: translateX(-14px);
+.toggle3.active3::before {
+transform: translateX(-14px);
 }
 
 .hideRecVids_container {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  top: 126px;
-  left: 0px;
+width: 35px;
+height: 20px;
+position: absolute;
+top: 126px;
+left: 0px;
 }
-.button2 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  position: absolute;
-  cursor: pointer;
-  top: 0px;
-  left: 0px;
-  border-radius: 10px;
-  transition: 0.2s;
+.toggle2 {
+width: 35px;
+height: 20px;
+background: rgba(178,58,72,1);
+position: absolute;
+cursor: pointer;
+top: 0px;
+left: 0px;
+border-radius: 10px;
+transition: 0.2s;
 }
-.button2::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255,255,255,1);
-  position: absolute;
-  content: '';
-  top: 2px;
-  left: 16px;
-  border-radius: 50%;
-  transition: 0.2s;
+.toggle2::before {
+width: 17px;
+height: 17px;
+background: rgba(255,255,255,1);
+position: absolute;
+content: '';
+top: 2px;
+left: 16px;
+border-radius: 50%;
+transition: 0.2s;
 }
-input:checked + .button2{
-  background: rgb(171, 171, 171);
+.toggle2.active2 {
+background: rgb(171, 171, 171);
 }
-input:checked + .button2::before{
-  transform: translateX(-14px);
+.toggle2.active2::before {
+transform: translateX(-14px);
 }
 
 .focusMode_container {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  top: 60px;
-  left: -150px;
+width: 35px;
+height: 20px;
+position: absolute;
+top: 60px;
+left: -150px;
 }
-.button1 {
-  width: 35px;
-  height: 20px;
-  background: rgba(178,58,72,1);
-  position: absolute;
-  cursor: pointer;
-  top: 0px;
-  left: 0px;
-  border-radius: 10px;
-  transition: 0.2s;
+.toggle1 {
+width: 35px;
+height: 20px;
+background: rgba(178,58,72,1);
+position: relative;
+cursor: pointer;
+top: 0px;
+left: 0px;
+border-radius: 10px;
+transition: 0.2s;
 }
-.button1::before {
-  width: 17px;
-  height: 17px;
-  background: rgba(255,255,255,1);
-  position: absolute;
-  content: '';
-  top: 1.5px;
-  left: 16.5px;
-  border-radius: 50%;
-  transition: 0.2s;
+.toggle1::before {
+width: 17px;
+height: 17px;
+background: rgba(255,255,255,1);
+position: absolute;
+content: '';
+top: 1.5px;
+left: 16.5px;
+border-radius: 50%;
+transition: 0.2s;
 }
-input:checked + .button1{
-  background: rgb(171, 171, 171);
+.toggle1.active {
+background: rgb(171, 171, 171);
 }
-input:checked + .button1::before{
-  transform: translateX(-14px);
+.toggle1.active::before {
+transform: translateX(-14px);
 }

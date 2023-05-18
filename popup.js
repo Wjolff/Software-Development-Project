@@ -1,4 +1,3 @@
-
 document.addEventListener(function () {
     var checkbox = document.querySelector('input[type="checkbox"]');
     chrome.storage.local.get('enabled', function (result) {
