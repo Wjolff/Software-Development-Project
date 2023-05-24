@@ -8,12 +8,16 @@ if(getMode4 && getMode4 === "off4"){
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+
     toggle4.addEventListener("click", () => {
         detector4.classList.toggle("off4");
+        showElement(4);
     
         if(!detector4.classList.contains("off4")) {
+            hideElement(4);
             return localStorage.setItem("mode4", "on4");
         }
+        
         localStorage.setItem("mode4", "off4");
     });
     

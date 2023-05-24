@@ -10,8 +10,11 @@ if(getMode3 && getMode3 === "off3"){
 window.addEventListener("DOMContentLoaded", () => {
     toggle3.addEventListener("click", () => {
         detector3.classList.toggle("off3");
+        showElement(3);
     
         if(!detector3.classList.contains("off3")) {
+
+            hideElement(3);
             return localStorage.setItem("mode3", "on3");
         }
         localStorage.setItem("mode3", "off3");

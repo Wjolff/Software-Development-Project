@@ -11,7 +11,8 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "storage"
+        "storage",
+        "scripting"
     ],
     //host permissions
     "host_permissions": ["https://*.youtube.com/*"],
@@ -37,7 +38,6 @@
             //runs js file responsible for extension functionality
             "js": [
                 "popup.js",
-                "background.js",
                 "focusMode.js",
                 "hideRecVids.js",
                 "hideVidComments.js",
@@ -45,7 +45,8 @@
                 "tags.js"
             ],
             //runs css styling files to properly style popup
-            "css": ["popup.css"]
+            "css": ["popup.css"],
+            "run_at": "document_end"
         }
     ]
 }

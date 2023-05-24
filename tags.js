@@ -8,10 +8,14 @@ if(getMode5 && getMode5 === "off5"){
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+
     toggle5.addEventListener("click", () => {
         detector5.classList.toggle("off5");
+        showElement(5);
     
         if(!detector5.classList.contains("off5")) {
+
+            hideElement(5);
             return localStorage.setItem("mode5", "on5");
         }
         localStorage.setItem("mode5", "off5");
