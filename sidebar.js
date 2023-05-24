@@ -7,13 +7,15 @@ if(getMode4 && getMode4 === "off4"){
     toggle4.classList.add("active4");
 }
 
-toggle4.addEventListener("click", () => {
-    detector4.classList.toggle("off4");
-
-    if(!detector4.classList.contains("off4")) {
-        return localStorage.setItem("mode4", "on4");
-    }
-    localStorage.setItem("mode4", "off4");
+window.addEventListener("DOMContentLoaded", () => {
+    toggle4.addEventListener("click", () => {
+        detector4.classList.toggle("off4");
+    
+        if(!detector4.classList.contains("off4")) {
+            return localStorage.setItem("mode4", "on4");
+        }
+        localStorage.setItem("mode4", "off4");
+    });
+    
+    toggle4.addEventListener("click", () => toggle4.classList.toggle("active4"));
 });
-
-toggle4.addEventListener("click", () => toggle4.classList.toggle("active4"));

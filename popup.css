@@ -324,7 +324,7 @@ position: absolute;
 top: 60px;
 left: -150px;
 }
-.toggle1 {
+.toggle {
 width: 35px;
 height: 20px;
 background: rgba(178,58,72,1);
@@ -335,7 +335,7 @@ left: 0px;
 border-radius: 10px;
 transition: 0.2s;
 }
-.toggle1::before {
+.toggle::before {
 width: 17px;
 height: 17px;
 background: rgba(255,255,255,1);
@@ -346,9 +346,9 @@ left: 16.5px;
 border-radius: 50%;
 transition: 0.2s;
 }
-.toggle1.active {
+.toggle.active {
 background: rgb(171, 171, 171);
 }
-.toggle1.active::before {
+.toggle.active::before {
 transform: translateX(-14px);
 }

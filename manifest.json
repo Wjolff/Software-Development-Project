@@ -9,6 +9,7 @@
     "version": "1.0",
     //permission to use chrome.tab API to read/detect tabs for extension
     "permissions": [
+        "activeTab",
         "tabs",
         "storage"
     ],
@@ -25,18 +26,26 @@
             "100": "/images/logo.png"
         },
         //default popup when chrome extension clicked
-        "default_popup": "homescreen.html"
+        "default_popup": "popup.html"
     },
     "content_scripts": [
         {
             //runs homescreen.html and content.js when url is matched with that of YouTube
             "matches": ["https://www.youtube.com/*"],
             //runs html files responsible for popup format
-            "html": ["homescreen.html"],
+            "html": ["popup.html"],
             //runs js file responsible for extension functionality
-            "js": ["content.js"],
+            "js": [
+                "popup.js",
+                "background.js",
+                "focusMode.js",
+                "hideRecVids.js",
+                "hideVidComments.js",
+                "sidebar.js",
+                "tags.js"
+            ],
             //runs css styling files to properly style popup
-            "css": ["homescreen.css"]
+            "css": ["popup.css"]
         }
     ]
 }
