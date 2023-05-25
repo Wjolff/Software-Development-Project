@@ -3,6 +3,16 @@
 // - debug (make sure code works in videoplayer too)
 // - initial preference
 
+function searchbar() {
+    chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
+        chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            function: setSeachbar,
+            args: [{action1: 'searchBar'}]
+        });
+    });
+}
+
 /**
  * Reposition an element using the element Id
  * @param  {string} Id The to-be-removed element's Id name
@@ -10,15 +20,17 @@
  * @param  {string} y The y-position of the element from the top
  * @return {nothing}
  */
-function setIdPosition(Id, x, y) {
+function setSeachbar(ID, x, y, flex) {
     //gets element using id tag
-    const idPosElement = document.getElementById(Id);
+    element = document.getElementById(ID);
     //keeps position relative for easier placement/manipulation if element has flex
-    idPosElement.style.position = "relative";
+    element.style.position = "relative";
     //sets new x-position of element
-    idPosElement.style.right = x;
+    element.style.right = x;
     //sets new y-position of element
-    idPosElement.style.top = y;
+    element.style.top = y;
+    //sets flex of element
+    element.style.flex = flex;
 }
 
 /**
@@ -112,12 +124,13 @@ function showElement(showAction) {
 }
 
 /**
- * Swapes an existing DOM element with a generated image and vice versa
+ * Swaps an existing DOM element with a generated image and vice versa
+ * @param {string} ID Id of object to be replaced in DOM
  * @return {Function} Object attribute that is a function which allows a specified DOM element to be replaced with generated image
  * @return {Function} Object attribute that is a function which restores the original DOM element
  */
-function swapElements() {
-    var targetElement = document.getElementById('logo');
+function swapElements(ID) {
+    var targetElement = document.getElementById(ID);
     var imageElement = null;
     var parent = null;
     var index = -1;
@@ -146,13 +159,13 @@ function swapElements() {
     };
 
     var restore = function() {
-        if (parent && index !== -1) {
+        if (parent && parent.children && parent.children[index]) {
             // Remove the image element
             parent.removeChild(imageElement);
-
+      
             // Insert the original element back into its original position
             parent.insertBefore(targetElement, parent.children[index]);
-        }
+          }
     };
 
     return {
@@ -161,8 +174,8 @@ function swapElements() {
     };
 }
 
-//Storing the replaceElementWithImage object as "result"
-var result = swapElements();
+//Storing the replaceElementWithImage object (applied to the logo) as "result"
+var result = swapElements("logo");
 
 /**
  * Function to be executed in the content script of the active tab
@@ -182,19 +195,22 @@ function hideElementInTab(message) {
         //Hides Sidebar
         document.getElementById('items').style.visibility = 'hidden';
         document.getElementById('sections').style.visibility = 'hidden';
+        document.getElementById('guide-button').style.visibility = 'hidden';
         //Hides Recommended Videos
         document.getElementById('contents').style.visibility = 'hidden';
         document.getElementById('related').style.visibility = 'hidden';
-        //ADD CODE: recommended videos in video player
         //Hides Youtube Country Icons
         document.getElementById('country-code').style.visibility = 'hidden';
         //Hides Copyright Footer
         document.getElementById('footer').style.visibility = 'hidden';
+        //Fixing Searchbar
+        setSeachbar("center", "-94px", "0px", 0.44);
     }
     //If Hide Recommended Videos toggle is clicked
     else if(message.action === 'recVidsHide') {
         //Hides Recommended Videos
         document.getElementById('related').style.visibility = 'hidden';
+        document.getElementById('contents').style.visibility = 'hidden';
     }
     //If Hide Video Comments toggle is clicked
     else if(message.action === 'vidCommentsHide') {
@@ -204,7 +220,8 @@ function hideElementInTab(message) {
     //If Hide Sidebar toggle is clicked
     else if(message.action === 'sidebarHide') {
         //Hides Sidebar
-        document.getElementById('contentContainer').style.visibility = 'hidden';
+        document.getElementById('items').style.visibility = 'hidden';
+        document.getElementById('sections').style.visibility = 'hidden';
         document.getElementById('guide-button').style.visibility = 'hidden';
     }
     //If Hide Tags toggle is clicked
@@ -222,7 +239,7 @@ function hideElementInTab(message) {
  */
 function showElementInTab(message) {
     if (message.action === 'focusModeShow') {
-        //Calls the restore function of the result attribute from the replaceElementWithImage function
+        //Calls the replace function of the result attribute from the replaceElementWithImage function
         result.restore();
         //Shows Homescreen Tags
         document.getElementById('scroll-container').style.visibility = 'visible';
@@ -230,28 +247,32 @@ function showElementInTab(message) {
         //Shows Top Icons
         document.getElementById('end').style.visibility = 'visible';
         //Shows Sidebar
-        document.getElementById('start').style.visibility = 'visible';
         document.getElementById('items').style.visibility = 'visible';
         document.getElementById('sections').style.visibility = 'visible';
+        document.getElementById('guide-button').style.visibility = 'visible';
         //Shows Recommended Videos
         document.getElementById('contents').style.visibility = 'visible';
+        document.getElementById('related').style.visibility = 'visible';
         //Shows Youtube Country Icons
-        document.getElementById('logo-icon').style.visibility = 'visible';
         document.getElementById('country-code').style.visibility = 'visible';
         //Shows Copyright Footer
         document.getElementById('footer').style.visibility = 'visible';
+        //Fixing Searchbar
+        setSeachbar("center", "0px", "0px", 0.453);
     }
     else if(message.action === 'recVidsShow') {
         //Shows Recommended Videos
         document.getElementById('related').style.visibility = 'visible';
+        document.getElementById('contents').style.visibility = 'visible';
     }
     else if(message.action === 'vidCommentsShow') {
         //Shows Video Comments
         document.getElementById('comments').style.visibility = 'visible';
     }
     else if(message.action === 'sidebarShow') {
-        //Hides Sidebar
-        document.getElementById('contentContainer').style.visibility = 'visible';
+        //Shows Sidebar
+        document.getElementById('items').style.visibility = 'visible';
+        document.getElementById('sections').style.visibility = 'visible';
         document.getElementById('guide-button').style.visibility = 'visible';
     }
     else if(message.action === 'tagsShow') {
@@ -260,3 +281,24 @@ function showElementInTab(message) {
         document.getElementById('right-arrow').style.visibility = 'visible'
     }
 }
+
+
+//Storing time user has been on YouTube
+
+// // Get the current date
+// const currentDate = new Date().toLocaleDateString();
+
+// // Get the stored start time for the current date
+// chrome.storage.local.get(currentDate, (result) => {
+//   // Check if the start time is stored
+//   if (result[currentDate]) {
+//     // Calculate the duration
+//     const startTime = result[currentDate];
+//     const currentTime = new Date().getTime();
+//     const durationInSeconds = Math.floor((currentTime - startTime) / 1000);
+
+//     // Display the duration in the popup
+//     const durationElement = document.getElementById('duration');
+//     durationElement.textContent = `YouTube has been open for ${durationInSeconds} seconds today.`;
+//   }
+// });

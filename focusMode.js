@@ -1,14 +1,20 @@
 detector = document.querySelector(".focusMode_container");
 toggle = document.querySelector(".toggle");
+getMode = localStorage.getItem("mode");
 
-let getMode = localStorage.getItem("mode");
-if(getMode && getMode === "off"){
-    detector.classList.add("off")
-    toggle.classList.add("active");
-}
-
-//ensures the wrapped code only executes after YouTube has loaded to prevent null error from being thrown
+//ensures the wrapped code only executes after popup content has loaded
 window.addEventListener("DOMContentLoaded",  () => {
+
+    //searchbar();
+
+    if(getMode && getMode === "off"){
+        detector.classList.add("off")
+        toggle.classList.add("active");
+        showElement(1);
+    } else {
+        hideElement(1);
+    }
+
     //detects when toggle is clicked
     toggle.addEventListener("click", () => {
 
@@ -21,6 +27,7 @@ window.addEventListener("DOMContentLoaded",  () => {
             return localStorage.setItem("mode", "on");
         }
         else if(detector.classList.contains("off")) {
+            // Calls the showElement function to show DOM elements
             showElement(1);
         }
         localStorage.setItem("mode", "off");
