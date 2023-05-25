@@ -143,13 +143,23 @@ function swapElements(ID) {
 
             imageElement = document.createElement('img');
             imageElement.src = 'https://drive.google.com/uc?export=view&id=1e71K7FYDQEbwh2h_uLYTQCO5BTm7VT03';
-            //Repositioning Element
+            // //Repositioning Element
+            // imageElement.style.position = 'absolute';
+            // imageElement.style.left = "400px";
+            // imageElement.style.top = "150px";
+            // //Resizing image
+            // imageElement.style.height = "780px";
+            // imageElement.style.width = "1040px";
+
+            // Apply responsive image styles
+            imageElement.style.maxWidth = '65%';
+            imageElement.style.height = 'auto';
+
+            // Apply positioning styles
             imageElement.style.position = 'absolute';
-            imageElement.style.left = "400px";
-            imageElement.style.top = "150px";
-            //Resizing image
-            imageElement.style.height = "780px";
-            imageElement.style.width = "1040px";
+            imageElement.style.top = '1000%';
+            imageElement.style.left = '51%';
+            imageElement.style.transform = 'translate(-50%, -50%)';
 
             if (parent) {
                 // Replace the target element with the new image element
