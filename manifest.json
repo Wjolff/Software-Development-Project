@@ -18,7 +18,8 @@
     "host_permissions": ["https://*.youtube.com/*"],
     //detailed icon (shown in extensions page)
     "icons": {
-        "100": "/images/logo.png"
+        "100": "/images/logo.png",
+        "200": "/images/homeLogo.png"
     },
     //pinned extension icon
     "action": {

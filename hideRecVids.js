@@ -11,11 +11,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     toggle2.addEventListener("click", () => {
         detector2.classList.toggle("off2");
-        showElement(2);
 
         if(!detector2.classList.contains("off2")) {
             hideElement(2);
             return localStorage.setItem("mode2", "on2");
+        }
+        else if(detector.classList.contains("off")) {
+            showElement(2);
         }
     
         localStorage.setItem("mode2", "off2");
