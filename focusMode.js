@@ -14,13 +14,14 @@ window.addEventListener("DOMContentLoaded",  () => {
 
         //first click is off since focus mode toggle is on by default
         detector.classList.toggle("off");
-        // Calls the showElement function to show DOM elements
-        showElement(1);
     
         if(!detector.classList.contains("off")) {
             // Calls the hideElement function to hide DOM elements
             hideElement(1);
             return localStorage.setItem("mode", "on");
+        }
+        else if(detector.classList.contains("off")) {
+            showElement(1);
         }
         localStorage.setItem("mode", "off");
     });

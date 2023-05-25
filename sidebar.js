@@ -11,11 +11,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     toggle4.addEventListener("click", () => {
         detector4.classList.toggle("off4");
-        showElement(4);
     
         if(!detector4.classList.contains("off4")) {
             hideElement(4);
             return localStorage.setItem("mode4", "on4");
+        }
+        else if(detector.classList.contains("off")) {
+            showElement(4);
         }
         
         localStorage.setItem("mode4", "off4");
