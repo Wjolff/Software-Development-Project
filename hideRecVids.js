@@ -1,13 +1,16 @@
-detector2 = document.querySelector(".hideRecVids_container"),
-    toggle2 = document.querySelector(".toggle2");
-
-let getMode2 = localStorage.getItem("mode2");
-if(getMode2 && getMode2 === "off2"){
-    detector2.classList.add("off2")
-    toggle2.classList.add("active2");
-}
+detector2 = document.querySelector(".hideRecVids_container");
+toggle2 = document.querySelector(".toggle2");
+getMode2 = localStorage.getItem("mode2");
 
 window.addEventListener("DOMContentLoaded", () => {
+
+    if(getMode2 && getMode2 === "off2"){
+        showElement(2);
+        detector2.classList.add("off2")
+        toggle2.classList.add("active2");
+    } else {
+        hideElement(2);
+    }
 
     toggle2.addEventListener("click", () => {
         detector2.classList.toggle("off2");

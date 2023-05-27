@@ -1,13 +1,16 @@
-detector3 = document.querySelector(".hideVidComments_container"),
-    toggle3 = document.querySelector(".toggle3");
-
-let getMode3 = localStorage.getItem("mode3");
-if(getMode3 && getMode3 === "off3"){
-    detector3.classList.add("off3")
-    toggle3.classList.add("active3");
-}
+detector3 = document.querySelector(".hideVidComments_container");
+toggle3 = document.querySelector(".toggle3");
+getMode3 = localStorage.getItem("mode3");
 
 window.addEventListener("DOMContentLoaded", () => {
+
+    if(getMode3 && getMode3 === "off3"){
+        showElement(3);
+        detector3.classList.add("off3")
+        toggle3.classList.add("active3");
+    } else {
+        hideElement(3);
+    }
 
     toggle3.addEventListener("click", () => {
         detector3.classList.toggle("off3");

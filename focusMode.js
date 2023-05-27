@@ -5,12 +5,10 @@ getMode = localStorage.getItem("mode");
 //ensures the wrapped code only executes after popup content has loaded
 window.addEventListener("DOMContentLoaded",  () => {
 
-    //searchbar();
-
     if(getMode && getMode === "off"){
+        showElement(1);
         detector.classList.add("off")
         toggle.classList.add("active");
-        showElement(1);
     } else {
         hideElement(1);
     }

@@ -2,6 +2,10 @@
   font-family: Cabin;
   src: url(fonts/Cabin.ttf);
 }
+@font-face {
+  font-family: Digital;
+  src: url(fonts/Digital.ttf);
+}
 style*{
   box-sizing: border-box;
 }
@@ -16,7 +20,7 @@ background: none
 
 .outer_background {
 width: 357px;
-height: 438px;
+height: 388px;
 background: rgba(252,185,178,1);
 position: absolute;
 top: 55px;
@@ -26,38 +30,46 @@ input:checked + .outer_background{
 background: rgb(89, 34, 34);
 }
 .inner_background {
-width: 316px;
-height: 411px;
-background: rgba(231,200,204,1);
+width: 325px;
+height: 361px;
+background: rgb(231,200,204);
 position: absolute;
 top: 68px;
-left: 21px;
+left: 15px;
 border-radius: 12px;
 }
 .focusMode_background {
-width: 150px;
-height: 51px;
-background: rgba(237, 173, 181, 1);
+width: 170px;
+height: 48px;
+background: rgb(255, 184, 192);
 position: absolute;
 top: 78px;
-left: 31px;
+left: 26px;
 border-radius: 5px;
 }
+.vidPlayer_background {
+  width: 300px;
+  height: 180px;
+  background: rgb(255, 184, 192);
+  position: absolute;
+  top: 140px;
+  left: 26px;
+  border-radius: 5px;
+  }
 .top_background {
 width: 357px;
 height: 56px;
-background: rgba(225,105,105,1);
+background: rgb(225,105,105);
 position: absolute;
 top: 0px;
 left: 0px;
 }
-
 .darkmode_container {
 width: 100px;
 height: 100px;
 position: absolute;
 top: 14px;
-left: 5px;
+left: 12px;
 }
 .darkmode {
 width: 30px;
@@ -113,8 +125,6 @@ input:checked + .darkmode::after{
 transform: rotate(135deg);
 background: rgb(255, 255, 255);
 }
-
-
 .text_container {
 width: 288px;
 height: 341px;
@@ -122,50 +132,57 @@ position: absolute;
 top: -35px;
 left: 39px;
 }
-.title_focusUp {
+.title_focusUp1 {
 width: 200px;
-color: rgba(0,0,0,1);
+color: rgb(255, 184, 192);
 position: absolute;
 top: 50px;
 left: 195px;
 font-size: 24px;
 }
+.title_focusUp2 {
+  width: 200px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 48px;
+  left: 197px;
+  font-size: 24px;
+  }
 .focus_mode {
 width: 200px;
-color: rgba(0,0,0,1);
+color: rgb(0,0,0);
 position: absolute;
 top: 127px;
 left: 1px;
 }
 .hide_recommended_videos {
 width: 200px;
-color: rgba(0,0,0,1);
+color: rgb(0,0,0);
 position: absolute;
 top: 191px;
 left: 1px;
 }
 .hide_video_comments {
 width: 200px;
-color: rgba(0,0,0,1);
+color: rgb(0,0,0);
 position: absolute;
 top: 233px;
 left: 0px;
 }
 .hide_sidebar {
 width: 200px;
-color: rgba(0,0,0,1);
+color: rgb(0,0,0);
 position: absolute;
 top: 275px;
 left: 1px;
 }
 .hide_tags {
 width: 200px;
-color: rgba(0,0,0,1);
+color: rgb(0,0,0);
 position: absolute;
 top: 317px;
 left: 1px;
 }
-
 .button_container {
 width: 35px;
 height: 272px;
@@ -183,7 +200,7 @@ left: 0px;
 .toggle5 {
 width: 35px;
 height: 20px;
-background: rgba(178,58,72,1);
+background: rgb(178,58,72);
 position: absolute;
 top: 0px;
 left: 0px;
@@ -208,7 +225,6 @@ background: rgb(171, 171, 171);
 .toggle5.active5::before {
 transform: translateX(-14px);
 }
-
 .hideSidebar_container {
 width: 35px;
 height: 20px;
@@ -219,7 +235,7 @@ left: 0px;
 .toggle4 {
 width: 35px;
 height: 20px;
-background: rgba(178,58,72,1);
+background: rgb(178,58,72);
 position: absolute;
 cursor: pointer;
 top: 0px;
@@ -230,7 +246,7 @@ transition: 0.2s;
 .toggle4::before {
 width: 17px;
 height: 17px;
-background: rgba(255,255,255,1);
+background: rgb(255,255,255);
 position: absolute;
 content: '';
 top: 2px;
@@ -244,7 +260,6 @@ background: rgb(171, 171, 171);
 .toggle4.active4::before {
 transform: translateX(-14px);
 }
-
 .hideVidComments_container {
 width: 35px;
 height: 20px;
@@ -255,7 +270,7 @@ left: 0px;
 .toggle3 {
 width: 35px;
 height: 20px;
-background: rgba(178,58,72,1);
+background: rgb(178,58,72);
 position: absolute;
 cursor: pointer;
 top: 0px;
@@ -266,7 +281,7 @@ transition: 0.2s;
 .toggle3::before {
 width: 17px;
 height: 17px;
-background: rgba(255,255,255,1);
+background: rgb(255,255,255);
 position: absolute;
 content: '';
 top: 1.5px;
@@ -291,7 +306,7 @@ left: 0px;
 .toggle2 {
 width: 35px;
 height: 20px;
-background: rgba(178,58,72,1);
+background: rgb(178,58,72);
 position: absolute;
 cursor: pointer;
 top: 0px;
@@ -302,7 +317,7 @@ transition: 0.2s;
 .toggle2::before {
 width: 17px;
 height: 17px;
-background: rgba(255,255,255,1);
+background: rgb(255,255,255);
 position: absolute;
 content: '';
 top: 2px;
@@ -327,7 +342,7 @@ left: -150px;
 .toggle {
 width: 35px;
 height: 20px;
-background: rgba(178,58,72,1);
+background: rgb(178,58,72);
 position: relative;
 cursor: pointer;
 top: 0px;
@@ -338,7 +353,7 @@ transition: 0.2s;
 .toggle::before {
 width: 17px;
 height: 17px;
-background: rgba(255,255,255,1);
+background: rgb(255,255,255);
 position: absolute;
 content: '';
 top: 1.5px;
@@ -351,4 +366,21 @@ background: rgb(171, 171, 171);
 }
 .toggle.active::before {
 transform: translateX(-14px);
+}
+.time_title {
+  width: 200px;
+  color: rgb(0,0,0);
+  position: absolute;
+  top: 335px;
+  left: 123px;
+  font-size: 20px
+}
+.time {
+  font-family: Digital;
+  font-size: 45px;
+  width: 200px;
+  color: rgb(0,0,0);
+  position: absolute;
+  top: 365px;
+  left: 90px;
 }

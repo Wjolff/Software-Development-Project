@@ -1,13 +1,16 @@
 detector4 = document.querySelector(".hideSidebar_container"),
 toggle4 = document.querySelector(".toggle4");
-
-let getMode4 = localStorage.getItem("mode4");
-if(getMode4 && getMode4 === "off4"){
-    detector4.classList.add("off4")
-    toggle4.classList.add("active4");
-}
+getMode4 = localStorage.getItem("mode4");
 
 window.addEventListener("DOMContentLoaded", () => {
+
+    if(getMode4 && getMode4 === "off4"){
+        showElement(4);
+        detector4.classList.add("off4")
+        toggle4.classList.add("active4");
+    } else {
+        hideElement(4);
+    }
 
     toggle4.addEventListener("click", () => {
         detector4.classList.toggle("off4");

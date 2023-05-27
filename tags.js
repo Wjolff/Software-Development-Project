@@ -1,13 +1,16 @@
-detector5 = document.querySelector(".hideTags_container"),
-    toggle5 = document.querySelector(".toggle5");
-
-let getMode5 = localStorage.getItem("mode5");
-if(getMode5 && getMode5 === "off5"){
-    detector5.classList.add("off5")
-    toggle5.classList.add("active5");
-}
+detector5 = document.querySelector(".hideTags_container");
+toggle5 = document.querySelector(".toggle5");
+getMode5 = localStorage.getItem("mode5");
 
 window.addEventListener("DOMContentLoaded", () => {
+
+    if(getMode5 && getMode5 === "off5"){
+        showElement(5);
+        detector5.classList.add("off5")
+        toggle5.classList.add("active5");
+    } else {
+        hideElement(5);
+    }
 
     toggle5.addEventListener("click", () => {
         detector5.classList.toggle("off5");
