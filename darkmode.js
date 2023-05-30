@@ -1,3 +1,4 @@
+alert("hi")
 const darkmode = document.querySelector(".darkmode");
 let isDarkModeEnabled = localStorage.getItem("mode0") === "on0";
 
