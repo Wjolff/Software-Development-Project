@@ -1,30 +1,24 @@
-detector5 = document.querySelector(".hideTags_container");
-toggle5 = document.querySelector(".toggle5");
-getMode5 = localStorage.getItem("mode5");
+const toggle5 = document.querySelector(".toggle5");
+let isActive5 = localStorage.getItem("mode5") === "on5";
 
-window.addEventListener("DOMContentLoaded", () => {
+toggle5.classList.toggle("active5", isActive5);
 
-    if(getMode5 && getMode5 === "off5"){
-        showElement(5);
-        detector5.classList.add("off5")
-        toggle5.classList.add("active5");
-    } else {
-        hideElement(5);
-    }
+//ensures the wrapped code only executes after popup content has loaded
+window.addEventListener("DOMContentLoaded",  () => {
 
+    //detects when toggle is clicked
     toggle5.addEventListener("click", () => {
-        detector5.classList.toggle("off5");
+        isActive5 = !isActive5;
+        toggle5.classList.toggle("active5", isActive5);
+        localStorage.setItem("mode5", isActive5 ? "on5" : "off5")
     
-        if(!detector5.classList.contains("off5")) {
+        if(!isActive5) {
+            // Calls the hideElement function to hide DOM elements
             hideElement(5);
-            return localStorage.setItem("mode5", "on5");
         }
-        else if(detector.classList.contains("off")) {
+        else {
+            // Calls the showElement function to show DOM elements
             showElement(5);
         }
-
-        localStorage.setItem("mode5", "off5");
     });
-    
-    toggle5.addEventListener("click", () => toggle5.classList.toggle("active5")); 
 });

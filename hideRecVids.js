@@ -1,31 +1,25 @@
-detector2 = document.querySelector(".hideRecVids_container");
-toggle2 = document.querySelector(".toggle2");
-getMode2 = localStorage.getItem("mode2");
+const toggle2 = document.querySelector(".toggle2");
+let isActive2 = localStorage.getItem("mode2") === "on2";
 
-window.addEventListener("DOMContentLoaded", () => {
+toggle2.classList.toggle("active2", isActive2);
 
-    if(getMode2 && getMode2 === "off2"){
-        showElement(2);
-        detector2.classList.add("off2")
-        toggle2.classList.add("active2");
-    } else {
-        hideElement(2);
-    }
+//ensures the wrapped code only executes after popup content has loaded
+window.addEventListener("DOMContentLoaded",  () => {
 
+    //detects when toggle is clicked
     toggle2.addEventListener("click", () => {
-        detector2.classList.toggle("off2");
-
-        if(!detector2.classList.contains("off2")) {
+        isActive2 = !isActive2;
+        toggle2.classList.toggle("active2", isActive2);
+        localStorage.setItem("mode2", isActive2 ? "on2" : "off2")
+    
+        if(!isActive2) {
+            // Calls the hideElement function to hide DOM elements
             hideElement(2);
-            return localStorage.setItem("mode2", "on2");
         }
-        else if(detector.classList.contains("off")) {
+        else {
+            // Calls the showElement function to show DOM elements
             showElement(2);
         }
-    
-        localStorage.setItem("mode2", "off2");
     });
-    
-    toggle2.addEventListener("click", () => toggle2.classList.toggle("active2"));
 });
 

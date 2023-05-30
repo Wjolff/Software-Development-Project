@@ -3,7 +3,6 @@
 // - debug (make sure code works in videoplayer too)
 // - initial preference
 
-
 /**
  * Swaps an existing DOM element with a generated image and vice versa
  * @param {string} ID Id of object to be replaced in DOM
@@ -77,7 +76,6 @@ function swapElements(ID) {
 }
 
 result = swapElements("logo")
-
 
 /**
  * Executes the hideElementTab function in the active tab by sending an action message

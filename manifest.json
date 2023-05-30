@@ -41,12 +41,7 @@
             "html": ["popup.html"],
             //runs js file responsible for extension functionality
             "js": [
-                "popup.js",
-                "focusMode.js",
-                "hideRecVids.js",
-                "hideVidComments.js",
-                "sidebar.js",
-                "tags.js"
+                "popup.js"
             ],
             //runs css styling files to properly style popup
             "css": ["popup.css"],

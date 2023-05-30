@@ -64,67 +64,75 @@ position: absolute;
 top: 0px;
 left: 0px;
 }
+
+
 .darkmode_container {
-width: 100px;
-height: 100px;
-position: absolute;
-top: 14px;
-left: 12px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 14px;
+  left: 12px;
 }
 .darkmode {
-width: 30px;
-height: 30px;
-background: rgb(0, 0, 0);
-position: absolute;
-top: 0px;
-left: 0px;
-border-radius: 50%;
-cursor: pointer;
-transition: 0.4s;
+  width: 30px;
+  height: 30px;
+  background: rgb(0, 0, 0);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.4s;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 .darkmode::before {
-background: rgb(255, 255, 255);
-border-radius: 50%;
-border-right-color: rgb(0, 0, 0);
-border-top-color: rgb(255, 255, 255);
-border-bottom-color: rgb(0, 0, 0);
-border-left-color: rgb(255, 255, 255);
-border-width: 12px;
-transform: rotate(-45deg);
-border-style: solid;
-position: absolute;
-content: '';
-top: 2.5px;
-left: 2px;
-transition: 0.4s;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  border-right-color: rgb(0, 0, 0);
+  border-top-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(0, 0, 0);
+  border-left-color: rgb(255, 255, 255);
+  border-width: 12px;
+  transform: rotate(-45deg);
+  border-style: solid;
+  position: absolute;
+  content: '';
+  top: 2.5px;
+  left: 2px;
+  transition: 0.4s;
 }
 .darkmode::after {
-background: rgb(255, 255, 255);
-border-radius: 50%;
-border-right-color: rgb(255, 255, 255);
-border-top-color: rgb(0, 0, 0);
-border-bottom-color: rgb(255, 255, 255);
-border-left-color: rgb(0, 0, 0);
-border-width: 5px;
-transform: rotate(-45deg);
-border-style: solid;
-position: absolute;
-content: '';
-top: 9px;
-left: 9.5px;
-transition: 0.4s;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  border-right-color: rgb(255, 255, 255);
+  border-top-color: rgb(0, 0, 0);
+  border-bottom-color: rgb(255, 255, 255);
+  border-left-color: rgb(0, 0, 0);
+  border-width: 5px;
+  transform: rotate(-45deg);
+  border-style: solid;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 9.5px;
+  transition: 0.4s;
 }
-input:checked + .darkmode{
-background: rgb(255, 255, 255);
+.darkmode.active0 {
+  background: rgb(255, 255, 255);
+  top: 0px;
+  left: 0px;
 }
-input:checked + .darkmode::before{
-transform: rotate(135deg);;
-background: rgb(0, 0, 0);
+.darkmode.active0::before {
+  transform: rotate(135deg);
+  background: rgb(0, 0, 0);
 }
-input:checked + .darkmode::after{
-transform: rotate(135deg);
-background: rgb(255, 255, 255);
+.darkmode.active0::after {
+  transform: rotate(135deg);
+  background: rgb(255, 255, 255);
 }
+
+
+
+
 .text_container {
 width: 288px;
 height: 341px;
@@ -367,6 +375,7 @@ background: rgb(171, 171, 171);
 .toggle.active::before {
 transform: translateX(-14px);
 }
+
 .time_title {
   width: 200px;
   color: rgb(0,0,0);

@@ -1,36 +1,24 @@
-detector = document.querySelector(".focusMode_container");
-toggle = document.querySelector(".toggle");
-getMode = localStorage.getItem("mode");
+const toggle = document.querySelector(".toggle");
+let isActive = localStorage.getItem("mode") === "on";
+
+toggle.classList.toggle("active", isActive);
 
 //ensures the wrapped code only executes after popup content has loaded
 window.addEventListener("DOMContentLoaded",  () => {
 
-    if(getMode && getMode === "off"){
-        showElement(1);
-        detector.classList.add("off")
-        toggle.classList.add("active");
-    } else {
-        hideElement(1);
-    }
-
     //detects when toggle is clicked
     toggle.addEventListener("click", () => {
-
-        //first click is off since focus mode toggle is on by default
-        detector.classList.toggle("off");
+        isActive = !isActive;
+        toggle.classList.toggle("active", isActive);
+        localStorage.setItem("mode", isActive ? "on" : "off")
     
-        if(!detector.classList.contains("off")) {
+        if(!isActive) {
             // Calls the hideElement function to hide DOM elements
             hideElement(1);
-            return localStorage.setItem("mode", "on");
         }
-        else if(detector.classList.contains("off")) {
+        else {
             // Calls the showElement function to show DOM elements
             showElement(1);
         }
-        localStorage.setItem("mode", "off");
     });
-
-    //keeps button active (able to be clicked/moved)
-    toggle.addEventListener("click", () => toggle.classList.toggle("active"));
 });
