@@ -21,13 +21,6 @@ function darkMode() {
     document.querySelector(".toggle3").style.backgroundColor = "rgb(69, 123, 157)";
     document.querySelector(".toggle4").style.backgroundColor = "rgb(69, 123, 157)";
     document.querySelector(".toggle5").style.backgroundColor = "rgb(69, 123, 157)";
-    // Change button colors (closed)
-    // Change button colors (closed)
-    document.querySelector("..toggle.active").style.backgroundColor = "rgb(171, 171, 171)";
-    document.querySelector("..toggle2.active2").style.backgroundColor = "rgb(171, 171, 171)";
-    document.querySelector("..toggle3.active3").style.backgroundColor = "rgb(171, 171, 171)";
-    document.querySelector("..toggle4.active4").style.backgroundColor = "rgb(171, 171, 171)";
-    document.querySelector("..toggle5.active5").style.backgroundColor = "rgb(171, 171, 171)";
 }
   
 function lightMode() {
@@ -53,12 +46,6 @@ function lightMode() {
     document.querySelector(".toggle3").style.backgroundColor = "";
     document.querySelector(".toggle4").style.backgroundColor = "";
     document.querySelector(".toggle5").style.backgroundColor = "";
-    // Change button colors (closed)
-    document.querySelector("..toggle.active").style.backgroundColor = "";
-    document.querySelector("..toggle2.active2").style.backgroundColor = "";
-    document.querySelector("..toggle3.active3").style.backgroundColor = "";
-    document.querySelector("..toggle4.active4").style.backgroundColor = "";
-    document.querySelector("..toggle5.active5").style.backgroundColor = "";
 }
 
 /**
