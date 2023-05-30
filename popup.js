@@ -1,7 +1,52 @@
-// TO-DO:
-// - darkmode
-// - debug (make sure code works in videoplayer too)
-// - initial preference
+function darkMode() {
+    // Change background colors
+    document.querySelector(".outer_background").style.backgroundColor = "rgb(64, 67, 78)";
+    document.querySelector(".inner_background").style.backgroundColor = "rgb(42, 46, 57)";
+    document.querySelector(".focusMode_background").style.backgroundColor = "rgb(82, 96, 118)";
+    document.querySelector(".vidPlayer_background").style.backgroundColor = "rgb(82, 96, 118)";
+    document.querySelector(".top_background").style.backgroundColor = "rgb(0, 0, 0)";
+    // Change text colors
+    document.querySelector(".title_focusUp2").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".title_focusUp1").style.color = "rgb(69, 123, 157)";
+    document.querySelector(".focus_mode").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".hide_recommended_videos").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".hide_video_comments").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".hide_sidebar").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".hide_tags").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".time_title").style.color = "rgb(255, 255, 255)";
+    document.querySelector(".time").style.color = "rgb(255, 255, 255)";
+    // Change button colors
+    document.querySelector(".toggle").style.backgroundColor = "rgb(69, 123, 157)";
+    document.querySelector(".toggle2").style.backgroundColor = "rgb(69, 123, 157)";
+    document.querySelector(".toggle3").style.backgroundColor = "rgb(69, 123, 157)";
+    document.querySelector(".toggle4").style.backgroundColor = "rgb(69, 123, 157)";
+    document.querySelector(".toggle5").style.backgroundColor = "rgb(69, 123, 157)";
+}
+  
+function lightMode() {
+    // Reset background colors
+    document.querySelector(".outer_background").style.backgroundColor = "";
+    document.querySelector(".inner_background").style.backgroundColor = "";
+    document.querySelector(".focusMode_background").style.backgroundColor = "";
+    document.querySelector(".vidPlayer_background").style.backgroundColor = "";
+    document.querySelector(".top_background").style.backgroundColor = "";
+    // Reset text colors
+    document.querySelector(".title_focusUp2").style.color = "";
+    document.querySelector(".title_focusUp1").style.color = "";
+    document.querySelector(".focus_mode").style.color = "";
+    document.querySelector(".hide_recommended_videos").style.color = "";
+    document.querySelector(".hide_video_comments").style.color = "";
+    document.querySelector(".hide_sidebar").style.color = "";
+    document.querySelector(".hide_tags").style.color = "";
+    document.querySelector(".time_title").style.color = "";
+    document.querySelector(".time").style.color = "";
+    // Reset button colors
+    document.querySelector(".toggle").style.backgroundColor = "";
+    document.querySelector(".toggle2").style.backgroundColor = "";
+    document.querySelector(".toggle3").style.backgroundColor = "";
+    document.querySelector(".toggle4").style.backgroundColor = "";
+    document.querySelector(".toggle5").style.backgroundColor = "";
+}
 
 /**
  * Swaps an existing DOM element with a generated image and vice versa
