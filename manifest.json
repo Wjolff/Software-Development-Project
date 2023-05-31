@@ -30,9 +30,6 @@
         //default popup when chrome extension clicked
         "default_popup": "popup.html"
     },
-    "background": {
-        "service-worker": "background.js"
-    },
     "content_scripts": [
         {
             //runs homescreen.html and content.js when url is matched with that of YouTube

@@ -13,10 +13,8 @@ function darkMode() {
     document.querySelector(".hide_video_comments").style.color = "rgb(255, 255, 255)";
     document.querySelector(".hide_sidebar").style.color = "rgb(255, 255, 255)";
     document.querySelector(".hide_tags").style.color = "rgb(255, 255, 255)";
-    document.querySelector(".time_title").style.color = "rgb(255, 255, 255)";
-    document.querySelector(".time").style.color = "rgb(255, 255, 255)";
     // Change button colors (open)
-    document.querySelector(".toggle").style.backgroundColor = "rgb(69, 123, 157)";
+    document.querySelector(".toggle.active").style.backgroundColor = "rgb(69, 123, 157)";
     document.querySelector(".toggle2").style.backgroundColor = "rgb(69, 123, 157)";
     document.querySelector(".toggle3").style.backgroundColor = "rgb(69, 123, 157)";
     document.querySelector(".toggle4").style.backgroundColor = "rgb(69, 123, 157)";
@@ -38,8 +36,6 @@ function lightMode() {
     document.querySelector(".hide_video_comments").style.color = "";
     document.querySelector(".hide_sidebar").style.color = "";
     document.querySelector(".hide_tags").style.color = "";
-    document.querySelector(".time_title").style.color = "";
-    document.querySelector(".time").style.color = "";
     // Reset button colors
     document.querySelector(".toggle").style.backgroundColor = "";
     document.querySelector(".toggle2").style.backgroundColor = "";
@@ -310,24 +306,3 @@ function showElementInTab(message) {
         document.getElementById('right-arrow').style.visibility = 'visible'
     }
 }
-
-
-//Storing time user has been on YouTube
-
-// // Get the current date
-// const currentDate = new Date().toLocaleDateString();
-
-// // Get the stored start time for the current date
-// chrome.storage.local.get(currentDate, (result) => {
-//   // Check if the start time is stored
-//   if (result[currentDate]) {
-//     // Calculate the duration
-//     const startTime = result[currentDate];
-//     const currentTime = new Date().getTime();
-//     const durationInSeconds = Math.floor((currentTime - startTime) / 1000);
-
-//     // Display the duration in the popup
-//     const durationElement = document.getElementById('duration');
-//     durationElement.textContent = `YouTube has been open for ${durationInSeconds} seconds today.`;
-//   }
-// });
