@@ -1,23 +1,31 @@
-const darkmode = document.querySelector(".darkmode");
-let isDarkModeEnabled = localStorage.getItem("mode0") === "on0";
+// Source: https://www.youtube.com/watch?v=TyITCYwsWHs
 
-// Update the button state based on the stored preference
+// Get the dark mode toggle element from the DOM
+const darkmode = document.querySelector(".darkmode");
+// Check if dark mode is enabled by retrieving the mode value from localStorage
+let isDarkModeEnabled = localStorage.getItem("mode0") === "on0";
+// Toggle the "active0" class on the darkmode element based on the dark mode status
 darkmode.classList.toggle("active0", isDarkModeEnabled);
 
-// Apply the stored color and button toggle state
+// If dark mode is enabled, apply the dark mode styles
 if (isDarkModeEnabled) {
-  darkMode();
+    darkMode();
 }
 
-// Update the button's appearance and store the preference on click
+// Add a click event listener to the darkmode element
 darkmode.addEventListener("click", () => {
-  isDarkModeEnabled = !isDarkModeEnabled;
-  darkmode.classList.toggle("active0", isDarkModeEnabled);
-  localStorage.setItem("mode0", isDarkModeEnabled ? "on0" : "off0");
-  
-  if (isDarkModeEnabled) {
-      darkMode();
-  } else {
-      lightMode();
-  }
+    // Toggle the dark mode status
+    isDarkModeEnabled = !isDarkModeEnabled;
+    // Toggle the "active0" class on the darkmode element based on the updated dark mode status
+    darkmode.classList.toggle("active0", isDarkModeEnabled);
+    // Store the updated dark mode status in localStorage
+    localStorage.setItem("mode0", isDarkModeEnabled ? "on0" : "off0");
+    // Apply appropriate styles based on the dark mode status
+    if (isDarkModeEnabled) {
+        darkMode();
+    } else {
+        lightMode();
+    }
 });
+
+

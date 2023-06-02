@@ -1,3 +1,7 @@
+/**
+ * Changes the background colors and text colors to create a dark mode effect.
+ * @return {nothing}
+ */
 function darkMode() {
     // Change background colors
     document.querySelector(".outer_background").style.backgroundColor = "rgb(64, 67, 78)";
@@ -20,7 +24,11 @@ function darkMode() {
     document.querySelector(".toggle4").style.backgroundColor = "rgb(69, 123, 157)";
     document.querySelector(".toggle5").style.backgroundColor = "rgb(69, 123, 157)";
 }
-  
+
+/**
+ * Resets the background colors and text colors to revert from dark mode to light mode.
+ * @return {nothing}
+ */
 function lightMode() {
     // Reset background colors
     document.querySelector(".outer_background").style.backgroundColor = "";
@@ -45,10 +53,12 @@ function lightMode() {
 }
 
 /**
- * Swaps an existing DOM element with a generated image and vice versa
- * @param {string} ID Id of object to be replaced in DOM
- * @return {Function} Object attribute that is a function which allows a specified DOM element to be replaced with generated image
- * @return {Function} Object attribute that is a function which restores the original DOM element
+ * Swaps the specified element with an image element, and stores the original element's
+ * parent and index in localStorage for later restoration.
+ * @param  {string} ID - The ID of the element to be swapped.
+ * @return {object} An object with 'replace' and 'restore' functions.
+ *                  - replace: Replaces the target element with the new image element.
+ *                  - restore: Restores the original element back into its original position.
  */
 function swapElements(ID) {
     var targetElement = document.getElementById(ID);
@@ -116,11 +126,17 @@ function swapElements(ID) {
     };
 }
 
+// Swaps the focusUp logo with YouTube's default logo
 result = swapElements("logo")
 
 /**
- * Executes the hideElementTab function in the active tab by sending an action message
- * @param  {Number} hideAction The to-be-removed element's Id name
+ * Hides specific elements in the active tab of the Chrome browser based on the given hideAction.
+ * @param  {number} hideAction - An integer representing the hide action to be performed.
+ *                              - 1: Focus mode hide action
+ *                              - 2: Recommended videos hide action
+ *                              - 3: Video comments hide action
+ *                              - 4: Sidebar hide action
+ *                              - 5: Tags hide action
  * @return {nothing}
  */
 function hideElement(hideAction) {
@@ -164,8 +180,13 @@ function hideElement(hideAction) {
 }
 
 /**
- * Executes the showElementTab function in the active tab by sending an action message
- * @param  {Number} showAction The number of the action message that should be sent
+ * Shows specific elements in the active tab of the Chrome browser based on the given showAction.
+ * @param  {number} showAction - An integer representing the show action to be performed.
+ *                              - 1: Focus mode show action
+ *                              - 2: Recommended videos show action
+ *                              - 3: Video comments show action
+ *                              - 4: Sidebar show action
+ *                              - 5: Tags show action
  * @return {nothing}
  */
 function showElement(showAction) {
@@ -209,8 +230,9 @@ function showElement(showAction) {
 }
 
 /**
- * Function to be executed in the content script of the active tab
- * @param  {object} message The message being passed by hideElement
+ * Function to be executed in the content script of the active tab.
+ * Hides specific elements in the active tab based on the hide action specified in the message object.
+ * @param  {object} message - The message being passed by hideElement.
  * @return {nothing}
  */
 function hideElementInTab(message) {
@@ -261,8 +283,9 @@ function hideElementInTab(message) {
 }
 
 /**
- * Function to be executed in the content script of the active tab
- * @param  {object} message The message being passed by showElement
+ * Function to be executed in the content script of the active tab.
+ * Shows specific elements in the active tab based on the show action specified in the message object.
+ * @param  {object} message - The message being passed by showElement.
  * @return {nothing}
  */
 function showElementInTab(message) {

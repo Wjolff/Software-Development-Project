@@ -1,46 +1,43 @@
+//Source: https://developer.chrome.com/docs/extensions/mv3/intro/
+
 {
-    //latest version of manifest
+    // Specifies the version of the manifest file format being used
     "manifest_version": 3,
-    //name of chrome extension (shown in extensions page)
+    // The name of the extension
     "name": "FocusUp",
-    //description of extension (shown in extensions page)
+    // A brief description of the extension's purpose
     "description": "Remove distracting elements from the YouTube interface.",
-    //version of chrome extension
+    // The version number of the extension
     "version": "1.0",
-    //permission to use chrome.tab API to read/detect tabs for extension
+    // An array of permissions required by the extension
     "permissions": [
         "activeTab",
         "tabs",
         "storage",
         "scripting"
     ],
-    //host permissions
+    // An array of host permissions, specifying that the extension requires access to URLs under the https://*.youtube.com/* domain
     "host_permissions": ["https://*.youtube.com/*"],
-    //detailed icon (shown in extensions page)
+    // A dictionary defining different icons for the extension
     "icons": {
         "100": "/images/logo.png",
         "200": "/images/homeLogo.png"
     },
-    //pinned extension icon
+    // Specifies the behavior of the extension's action button (the button associated with the extension in the browser toolbar)
     "action": {
-        //icon shown in extensions bar
         "default_icon": {
             "100": "/images/logo.png"
         },
-        //default popup when chrome extension clicked
         "default_popup": "popup.html"
     },
+    // Defines content scripts to be injected into web pages that match the specified URL pattern (https://www.youtube.com/*)
     "content_scripts": [
         {
-            //runs homescreen.html and content.js when url is matched with that of YouTube
             "matches": ["https://www.youtube.com/*"],
-            //runs html files responsible for popup format
             "html": ["popup.html"],
-            //runs js file responsible for extension functionality
             "js": [
                 "popup.js"
             ],
-            //runs css styling files to properly style popup
             "css": ["popup.css"],
             "run_at": "document_end"
         }
