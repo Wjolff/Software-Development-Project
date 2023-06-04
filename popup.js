@@ -61,68 +61,68 @@ function lightMode() {
  *                  - restore: Restores the original element back into its original position.
  */
 function swapElements(ID) {
-    var targetElement = document.getElementById(ID);
-    var imageElement = null;
-    var parent = null;
-    var index = -1;
+    var targetElement = document.getElementById(ID); // Get the target element by ID
+    var imageElement = null; // Initialize imageElement as null
+    var parent = null; // Initialize parent as null
+    var index = -1; // Initialize index as -1
   
     var replace = function() {
-      if (targetElement) {
-        // Store the original state of the target element
-        parent = targetElement.parentNode;
-        index = Array.prototype.indexOf.call(parent.children, targetElement);
-  
-        imageElement = document.createElement('img');
-        imageElement.src = 'https://drive.google.com/uc?export=view&id=1e71K7FYDQEbwh2h_uLYTQCO5BTm7VT03';
-  
-        // Apply responsive image styles
-        imageElement.style.maxWidth = '65%';
-        imageElement.style.height = 'auto';
-  
-        // Apply positioning styles
-        imageElement.style.position = 'absolute';
-        imageElement.style.top = '1000%';
-        imageElement.style.left = '51%';
-        imageElement.style.transform = 'translate(-50%, -50%)';
-  
-        if (parent) {
-          // Replace the target element with the new image element
-          parent.replaceChild(imageElement, targetElement);
-  
-          // Store parent node and index in localStorage
-          localStorage.setItem('parent', parent.outerHTML);
-          localStorage.setItem('index', index.toString());
+        if (targetElement) {
+            // Store the original state of the target element
+            parent = targetElement.parentNode; // Get the parent node of the target element
+            index = Array.prototype.indexOf.call(parent.children, targetElement); // Get the index of the target element within its parent's children
+    
+            imageElement = document.createElement('img'); // Create a new image element
+            imageElement.src = 'https://drive.google.com/uc?export=view&id=1e71K7FYDQEbwh2h_uLYTQCO5BTm7VT03'; // Set the source of the image element
+    
+            // Apply responsive image styles
+            imageElement.style.maxWidth = '65%';
+            imageElement.style.height = 'auto';
+    
+            // Apply positioning styles
+            imageElement.style.position = 'absolute';
+            imageElement.style.top = '1000%';
+            imageElement.style.left = '51%';
+            imageElement.style.transform = 'translate(-50%, -50%)';
+    
+            if (parent) {
+                // Replace the target element with the new image element
+                parent.replaceChild(imageElement, targetElement);
+    
+                // Store parent node and index in localStorage
+                localStorage.setItem('parent', parent.outerHTML);
+                localStorage.setItem('index', index.toString());
+            }
         }
-      }
     };
   
     var restore = function() {
-      // Retrieve parent node and index from localStorage
-      var storedParent = localStorage.getItem('parent');
-      var storedIndex = localStorage.getItem('index');
-      if (storedParent && storedIndex) {
-        var parsedIndex = parseInt(storedIndex);
-        var tempParent = document.createElement('div');
-        tempParent.innerHTML = storedParent;
-  
-        var restoredParent = tempParent.firstChild;
-        var restoredTargetElement = restoredParent.children[parsedIndex];
-  
-        if (restoredParent && restoredTargetElement) {
-          // Remove the image element
-          if (imageElement && imageElement.parentNode) {
-            imageElement.parentNode.removeChild(imageElement);
-          }
-  
-          // Insert the original element back into its original position
-          restoredParent.replaceChild(targetElement, restoredTargetElement);
+        // Retrieve parent node and index from localStorage
+        var storedParent = localStorage.getItem('parent');
+        var storedIndex = localStorage.getItem('index');
+        if (storedParent && storedIndex) {
+            var parsedIndex = parseInt(storedIndex);
+            var tempParent = document.createElement('div');
+            tempParent.innerHTML = storedParent;
+    
+            var restoredParent = tempParent.firstChild;
+            var restoredTargetElement = restoredParent.children[parsedIndex];
+    
+            if (restoredParent && restoredTargetElement) {
+                // Remove the image element
+                if (imageElement && imageElement.parentNode) {
+                    imageElement.parentNode.removeChild(imageElement);
+                }
+    
+                // Insert the original element back into its original position
+                restoredParent.replaceChild(targetElement, restoredTargetElement);
+            }
         }
-      }
     };
   
     return {
-      replace: replace,
-      restore: restore
+        replace: replace,
+        restore: restore
     };
 }
 
@@ -140,40 +140,46 @@ result = swapElements("logo")
  * @return {nothing}
  */
 function hideElement(hideAction) {
-    chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
-        if(hideAction == 1){
+    chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) { // Source for "chrome.tabs.query": Stack Overflow
+        // Query the active tab in the current window
+        if (hideAction == 1) {
+            // If hideAction is 1, execute the hideElementInTab function with the 'focusModeHide' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: hideElementInTab,
-                args: [{action: 'focusModeHide'}]
+            target: { tabId: tabs[0].id },
+            function: hideElementInTab,
+            args: [{ action: 'focusModeHide' }]
             });
         }
-        if(hideAction == 2) {
+        if (hideAction == 2) {
+            // If hideAction is 2, execute the hideElementInTab function with the 'recVidsHide' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: hideElementInTab,
-                args: [{action: 'recVidsHide'}]
+            target: { tabId: tabs[0].id },
+            function: hideElementInTab,
+            args: [{ action: 'recVidsHide' }]
             });
         }
-        if(hideAction == 3) {
+        if (hideAction == 3) {
+            // If hideAction is 3, execute the hideElementInTab function with the 'vidCommentsHide' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: hideElementInTab,
-                args: [{action: 'vidCommentsHide'}]
+            target: { tabId: tabs[0].id },
+            function: hideElementInTab,
+            args: [{ action: 'vidCommentsHide' }]
             });
         }
-        if(hideAction == 4) {
+        if (hideAction == 4) {
+            // If hideAction is 4, execute the hideElementInTab function with the 'sidebarHide' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: hideElementInTab,
-                args: [{action: 'sidebarHide'}]
+            target: { tabId: tabs[0].id },
+            function: hideElementInTab,
+            args: [{ action: 'sidebarHide' }]
             });
         }
-        if(hideAction == 5) {
+        if (hideAction == 5) {
+            // If hideAction is 5, execute the hideElementInTab function with the 'tagsHide' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: hideElementInTab,
-                args: [{action: 'tagsHide'}]
+            target: { tabId: tabs[0].id },
+            function: hideElementInTab,
+            args: [{ action: 'tagsHide' }]
             });
         }
     });
@@ -191,43 +197,49 @@ function hideElement(hideAction) {
  */
 function showElement(showAction) {
     chrome.tabs.query({ active: true, currentWindow: true }).then(function (tabs) {
-        if(showAction == 1){
+        // Query the active tab in the current window
+        if (showAction == 1) {
+            // If showAction is 1, execute the showElementInTab function with the 'focusModeShow' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: showElementInTab,
-                args: [{action: 'focusModeShow'}]
+            target: { tabId: tabs[0].id },
+            function: showElementInTab,
+            args: [{ action: 'focusModeShow' }]
             });
         }
-        if(showAction == 2) {
+        if (showAction == 2) {
+            // If showAction is 2, execute the showElementInTab function with the 'recVidsShow' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: showElementInTab,
-                args: [{action: 'recVidsShow'}]
+            target: { tabId: tabs[0].id },
+            function: showElementInTab,
+            args: [{ action: 'recVidsShow' }]
             });
         }
-        if(showAction == 3) {
+        if (showAction == 3) {
+            // If showAction is 3, execute the showElementInTab function with the 'vidCommentsShow' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: showElementInTab,
-                args: [{action: 'vidCommentsShow'}]
+            target: { tabId: tabs[0].id },
+            function: showElementInTab,
+            args: [{ action: 'vidCommentsShow' }]
             });
         }
-        if(showAction == 4) {
+        if (showAction == 4) {
+            // If showAction is 4, execute the showElementInTab function with the 'sidebarShow' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: showElementInTab,
-                args: [{action: 'sidebarShow'}]
+            target: { tabId: tabs[0].id },
+            function: showElementInTab,
+            args: [{ action: 'sidebarShow' }]
             });
         }
-        if(showAction == 5) {
+        if (showAction == 5) {
+            // If showAction is 5, execute the showElementInTab function with the 'tagsShow' action
             chrome.scripting.executeScript({
-                target: { tabId: tabs[0].id },
-                function: showElementInTab,
-                args: [{action: 'tagsShow'}]
+            target: { tabId: tabs[0].id },
+            function: showElementInTab,
+            args: [{ action: 'tagsShow' }]
             });
         }
-    });
-}
+        });
+  }
 
 /**
  * Function to be executed in the content script of the active tab.
